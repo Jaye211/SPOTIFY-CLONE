@@ -5,6 +5,7 @@ import { useDataLayerValue } from './DataLayer';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import SongRow from './SongRow';
 
 
 function Body({ spotify }) {
@@ -29,6 +30,10 @@ function Body({ spotify }) {
                 <MoreHorizIcon />
 
             </div>
+
+            {discover_weekly?.tracks.items.map(item => (
+                <SongRow track={item.track} />
+            ))}
         </div>
     </div>
     
